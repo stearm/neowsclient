@@ -6,9 +6,9 @@ defmodule ElixirNeowsClient.Plug.AppRouter do
   plug :dispatch
 
   get "/asteroids/list" do
-    conn = fetch_query_params conn
+    conn = fetch_query_params(conn)
     %{"from" => from, "to" => to } = conn.params
-    {statusCode, body} = ElixirNeowsClient.Client.fetch_from_nasa from, to
-    send_resp conn, statusCode, Poison.encode!(body)
+    {statusCode, body} = ElixirNeowsClient.Client.fetch_from_nasa(from, to)
+    send_resp(conn, statusCode, Poison.encode!(body))
   end
 end
