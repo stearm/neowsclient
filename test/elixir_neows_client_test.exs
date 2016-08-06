@@ -1,4 +1,4 @@
-defmodule ElixirNeowsClientTest do
+defmodule ElixirNeowsClient do
   use ExUnit.Case
   doctest ElixirNeowsClient
 
